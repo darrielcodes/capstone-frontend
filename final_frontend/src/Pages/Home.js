@@ -44,7 +44,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://darrielcodes.com/">
-301/final_frontend/src/lib/validator.js      darrielcodes.com
+      darrielcodes.com
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -58,7 +58,7 @@ export default function Home() {
     const navigate = useNavigate()
    // const auth = useSelector( state => state.auth.isAuth )
     // const url = useSelector(state => state.dog.message);
-    const auth = useSelector( state => state.auth.isAuth )
+
     const getDog = useGetDog()
     const newMatch = useClickHook(getDog)
    
@@ -66,12 +66,12 @@ export default function Home() {
    
     // func to call auth on load
     // let authy = checkAuthToken()
-    useEffect(() => {
-     dispatch(authSuccess())
+    // useEffect(() => {
+    //   authy ? dispatch(authSuccess())
     //   :
     //   dispatch(authFailure())
-    }, [])
-console.log(auth);
+    // }, [])
+
     const [expanded, setExpanded] = React.useState(false);
     const handleExpandClick = () => {
       setExpanded(!expanded);
@@ -130,13 +130,13 @@ console.log(auth);
           <Button variant='contained' sx={{fontFamily: 'monospace'}} onClick={() => {navigate('/dashboard')}}>Dashboard</Button>
           <Button variant='contained' sx={{fontFamily: 'monospace'}} onClick={() => {
             dispatch(authLogout())
+            navigate('/signin')
           }
           }>Logout</Button>
         </Toolbar>
       </AppBar>
       <main>
         {/* Hero unit */}
-      
        <Grid 
   direction="column"
   justifyContent="center"
@@ -213,7 +213,6 @@ console.log(auth);
             </Stack>
           </Container>
           </Grid>
-        
       </main>
 
       {/* Footer */}

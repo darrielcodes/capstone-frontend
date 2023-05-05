@@ -147,8 +147,9 @@ export const userSlice = createSlice({
                 state.status = 'fulfilled'
             })
             .addCase(updateAcct.fulfilled, (state, action) => {
-                state.name = action.payload.updateInfo.name
-                state.email = action.payload.updateInfo.email
+                console.log(action.payload);
+                state.name = action.payload.name
+                state.email = action.payload.email
                 state.status = 'fulfilled'
             })
     }

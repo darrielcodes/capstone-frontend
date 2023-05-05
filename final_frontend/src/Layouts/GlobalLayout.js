@@ -15,7 +15,6 @@ const GlobalLayout = () => {
       console.log(auth);
   return (
     <>
-    hello
     <Outlet />  
     </>
   )

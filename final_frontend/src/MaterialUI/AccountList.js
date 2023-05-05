@@ -36,24 +36,10 @@ export default function AccountList() {
         message: ''
     });
     useEffect(() => {
-        // const getAcct = async () => {
-        //    let response = await Axios.get('/users/getMatches')
-        //      let user = response.data.foundUser
-        //      console.log(response.data.foundUser);
-   
-        //    setUser({
-        //        name: user.name,
-        //        email: user.email,
-        //        password: user.password
-        //    })
-          
-        //  };
-        //  getAcct()
-       
-        // console.log(dispatch(getAcct()));
-       }, [])
+        dispatch(getAcct())
+       }, [acctData])
 //  
-dispatch(getAcct())
+//
 
  console.log(acctData);
     const handleSubmit = async (event) => {
@@ -81,6 +67,7 @@ dispatch(getAcct())
 
     //   (userObj.password === data.get('password1')) 
     //   && 
+    
       dispatch(updateAcct(userObj))
       console.log(userObj);
 
